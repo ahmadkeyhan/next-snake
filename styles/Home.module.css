@@ -1,121 +1,211 @@
-.container {
-  min-height: 100vh;
-  padding: 0 0.5rem;
+.Alert {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(38, 50, 56, 0.5);
+  z-index: 1000;
+}
+
+.AlertCard {
+  position: relative;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+  background: var(--color-board);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 80vw;
+  height: 25%;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 7px 7px rgba(38, 50, 56, 0.19), 0 4px 2px rgba(38, 50, 56, 0.23);
+  text-align: center;
+  line-height: 1.2rem;
+  transition: background 0.25s ease-in-out;
+}
+
+.AlertMessage {
+  margin-top: 0;
+  color: var(--color-text);
+  transition: color 0.25s ease-in-out;
+}
+
+.AlertButton {
+  padding: 0.7rem 1rem;
+  background-image: radial-gradient(
+    circle farthest-corner at 10% 20%,
+    rgba(162, 102, 246, 1) 0%,
+    rgba(203, 159, 249, 1) 90%
+  );
+  color: var(--color-bg);
+  border: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  box-shadow: 0 7px 7px rgba(38, 50, 56, 0.19), 0 4px 2px rgba(38, 50, 56, 0.23);
+  font-family: "Josefin Sans", sans-serif;
+  transition: color 0.25s ease-in-out;
+  cursor: pointer;
+}
+
+.Snake {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  background: var(--color-bg);
+  transition: background 0.25s ease-in-out;
   height: 100vh;
 }
 
-.main {
-  padding: 5rem 0;
-  flex: 1;
+.Header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Title {
+  font-size: 1.4rem;
+  margin: 0;
+  color: var(--color-title);
+  transition: color 0.25s ease-in-out;
+}
+
+.ThemeIcon {
+  color: var(--color-title);
+  transition: color 0.25s ease-in-out;
+  cursor: pointer;
+}
+
+.Button {
+  margin: -0.3rem 0.6rem;
+  font-size: 2rem;
+  color: var(--color-board);
+  transition: color 0.25s ease-in-out;
+  cursor: pointer;
+}
+
+.Board {
+  box-shadow: 0 7px 7px rgba(38, 50, 56, 0.19), 0 0px 2px rgba(38, 50, 56, 0.23);
+  width: 90vw;
+  border-radius: 1.8vw;
+  border: 2px solid rgb(162, 102, 246);
+  border-bottom: 0;
+  z-index: 100;
+  background-image: radial-gradient(
+    circle farthest-corner at 10% 10%,
+    var(--color-board) 0%,
+    var(--color-bg) 70%
+  );
+  transition: background-image 0.25s ease-in-out;
+}
+
+.Card {
+  z-index: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  width: 90vw;
+  height: 7.5rem;
+  margin-top: -1rem;
+  padding: 2rem 0.5rem 0.5rem 0.5rem;
+  background-image: radial-gradient(
+    circle farthest-corner at 10% 20%,
+    rgba(162, 102, 246, 1) 0%,
+    rgba(203, 159, 249, 1) 90%
+  );
+  box-shadow: 0 2px 2px rgba(38, 50, 56, 0.16), 0 2px 2px rgba(38, 50, 56, 0.23);
+  border-radius: 0 0 1.8vw 1.8vw;
+}
+
+.Control {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
-.footer {
-  width: 100%;
-  height: 100px;
-  border-top: 1px solid #eaeaea;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.FirstTryButton {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  border: 0;
+  background: var(--color-board);
+  margin-right: 0.5rem;
+  margin-top: 1rem;
+  width: 5rem;
+  height: 2.5rem;
+  border-radius: 0.3rem;
+  color: var(--color-text);
+  box-shadow: 0 2px 2px rgba(38, 50, 56, 0.16), 0 2px 2px rgba(38, 50, 56, 0.23);
+  transition: background 0.25s ease-in-out;
+  transition: color 0.25s ease-in-out;
+  cursor: pointer;
 }
 
-.footer a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
-}
-
-.title a {
-  color: #0070f3;
-  text-decoration: none;
-}
-
-.title a:hover,
-.title a:focus,
-.title a:active {
-  text-decoration: underline;
-}
-
-.title {
-  margin: 0;
-  line-height: 1.15;
-  font-size: 4rem;
-}
-
-.title,
-.description {
-  text-align: center;
-}
-
-.description {
-  line-height: 1.5;
-  font-size: 1.5rem;
-}
-
-.code {
-  background: #fafafa;
-  border-radius: 5px;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
-}
-
-.grid {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 800px;
-  margin-top: 3rem;
-}
-
-.card {
-  margin: 1rem;
-  padding: 1.5rem;
-  text-align: left;
-  color: inherit;
-  text-decoration: none;
-  border: 1px solid #eaeaea;
-  border-radius: 10px;
-  transition: color 0.15s ease, border-color 0.15s ease;
-  width: 45%;
-}
-
-.card:hover,
-.card:focus,
-.card:active {
-  color: #0070f3;
-  border-color: #0070f3;
-}
-
-.card h2 {
-  margin: 0 0 1rem 0;
-  font-size: 1.5rem;
-}
-
-.card p {
-  margin: 0;
-  font-size: 1.25rem;
-  line-height: 1.5;
-}
-
-.logo {
-  height: 1em;
+.Scores {
+  color: var(--color-board);
   margin-left: 0.5rem;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  transition: color 0.25s ease-in-out;
 }
 
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
+.Score {
+  letter-spacing: 0.1rem;
+  font-size: 0.9rem;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+@media screen and (min-width: 500px) and (max-width: 999px) {
+  .Board {
+    width: 80vw;
+    border-radius: 1.6vw;
+  }
+
+  .Card {
+    width: 80vw;
+    border-radius: 0 0 1.6vw 1.6vw;
+  }
+
+  .Header {
+    padding: 1rem calc(10vw + 1rem);
+  }
+
+  .AlertCard {
+    width: 60vw;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .Board {
+    width: 40vw;
+    border-radius: 0.8vw;
+  }
+
+  .Card {
+    width: 40vw;
+    border-radius: 0 0 0.8vw 0.8vw;
+  }
+
+  .Header {
+    padding: 1rem calc(30vw + 1rem);
+  }
+
+  .AlertCard {
+    width: 30vw;
   }
 }
