@@ -41,6 +41,7 @@
     rgba(162, 102, 246, 1) 0%,
     rgba(203, 159, 249, 1) 90%
   );
+  width: 7rem;
   color: var(--color-bg);
   border: 0;
   font-size: 0.9rem;

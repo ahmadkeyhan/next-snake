@@ -16,7 +16,7 @@ export default function Snake() {
       }, [activeTheme])
     //initial states
     const [snake, setSnake] = useState([[13,9],[12,9],[11,9]])
-    const [direction, setDirection] = useState({})
+    const [direction, setDirection] = useState({x: 1, y:0})
     const [prevDirection, setPrevDirection] = useState({})
     const [dead, setDead] = useState(true)
     const [apple, setApple] = useState(growApple())
@@ -128,39 +128,36 @@ export default function Snake() {
         const handleKeyDown = e => {
             console.log(e.code)
             if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'KeyA', 'KeyS', 'KeyD', 'KeyW'].includes(e.code)) {
-                let direction = {}
+                let dir = {}
                 switch (e.code) {
                     case 'KeyA':
-                        direction = {x: -1, y: 0}
+                        dir = {x: -1, y: 0}
                         break
                     case 'KeyW':
-                        direction = {x: 0, y: -1}
+                        dir = {x: 0, y: -1}
                         break
                     case 'KeyD':
-                        direction = {x: 1, y: 0}
+                        dir = {x: 1, y: 0}
                         break
                     case 'KeyS':
-                        direction = {x: 0, y: 1}
+                        dir = {x: 0, y: 1}
                         break
                     case 'ArrowLeft':
-                        direction = {x: -1, y: 0}
+                        dir = {x: -1, y: 0}
                         break
                     case 'ArrowUp':
-                        direction = {x: 0, y: -1}
+                        dir = {x: 0, y: -1}
                         break
                     case 'ArrowRight':
-                        direction = {x: 1, y: 0}
+                        dir = {x: 1, y: 0}
                         break
                     case 'ArrowDown':
-                        direction = {x: 0, y: 1}
+                        dir = {x: 0, y: 1}
                         break
                     default:
                         console.error('Error')
                 }
-                if (!((prevDirection.x + direction.x === 0)
-                    && (prevDirection.y + direction.y === 0))) {
-                    setDirection(direction)
-                }
+                setDirection(dir)
             }
         }
 
@@ -181,8 +178,13 @@ export default function Snake() {
                         {newHighScore ? "Congrats! You've reached a new high score!" : 'You can do better!'}
                     </p>
                     <button className={styles.AlertButton}
-                    onClick={() => setDead(false)}>
-                        Try again!
+                    onClick={() => {
+                        countDown()
+                        setTimeout(() => {
+                            setFirstTry(false)
+                            setDead(false)
+                            setTimeTo(4)}, 3000)}}>
+                        {timeTo == 4 ? 'Try again!' : timeTo == 3 ? 'ready?' : timeTo == 2 ? 'set!' : 'snake!'}
                     </button>
                 </div>
             </div>
@@ -225,6 +227,7 @@ export default function Snake() {
                                 setTimeout(() => {
                                     setFirstTry(false)
                                     setDead(false)
+                                    setTimeTo(4)
                                     }, 3000)}}
                             className={styles.FirstTryButton}>    
                             {timeTo == 4 ? 'start' : timeTo == 3 ? 'ready?' : timeTo == 2 ? 'set!' : 'snake!'}
