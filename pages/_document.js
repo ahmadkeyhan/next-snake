@@ -27,7 +27,7 @@ class MyDocument extends Document {
                     <meta name="twitter:card" content="summary" />
                     <meta name="twitter:site" content="@keyhansa1" />
                     <meta name="twitter:title" content="Snake made with NextJs" />
-                    <meta name="twitter:image" content="https://snake.keyhansa.ir/_next/image?url=%2Fbanner.png&w=211&q=100" />
+                    <meta name="twitter:image" content="https://snake.keyhansa.ir/_next/image?url=%2Fbanner.png&w=1080&q=100" />
                 </Head>
                 <body>
                     <script dangerouslySetInnerHTML={{ __html: setInitialTheme }} />
