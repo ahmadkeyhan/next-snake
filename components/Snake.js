@@ -187,7 +187,7 @@ export default function Snake() {
                             setTimeTo(4)}, 3000)}}>
                         {timeTo == 4 ? 'Try again!' : timeTo == 3 ? 'ready?' : timeTo == 2 ? 'set!' : 'snake!'}
                     </button>
-                    <a href=''>
+                    <a href={`https://twitter.com/intent/tweet?hashtags=nextjs&text=I scored ${highScore} on NEXT Snake! I dare you to score more!&url=snake.keyhansa.ir`} target="_blank">
                         <div className={styles.TwitterIcon}>
                             <SiIcons.SiTwitter />
                         </div>

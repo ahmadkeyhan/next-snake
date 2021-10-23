@@ -26,8 +26,8 @@ class MyDocument extends Document {
                 <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet" />
                     <meta name="twitter:card" content="summary" />
                     <meta name="twitter:site" content="@keyhansa1" />
-                    <meta name="twitter:title" content="Adobe creative types made with NextJs" />
-                    <meta name="twitter:image" content="https://www.mycreativetype.com/images/seo/_twitter/site-twitter.png" />
+                    <meta name="twitter:title" content="Snake made with NextJs" />
+                    <meta name="twitter:image" content="https://snake.keyhansa.ir/_next/image?url=%2Fbanner.png&w=211&q=100" />
                 </Head>
                 <body>
                     <script dangerouslySetInnerHTML={{ __html: setInitialTheme }} />
