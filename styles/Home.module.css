@@ -19,7 +19,6 @@
   justify-content: center;
   align-items: center;
   width: 80vw;
-  height: 25%;
   padding: 1.5rem;
   border-radius: 0.5rem;
   box-shadow: 0 7px 7px rgba(38, 50, 56, 0.19), 0 4px 2px rgba(38, 50, 56, 0.23);
@@ -51,6 +50,21 @@
   font-family: "Josefin Sans", sans-serif;
   transition: color 0.25s ease-in-out;
   cursor: pointer;
+}
+
+.TwitterIcon {
+  background-image: radial-gradient(
+    circle farthest-corner at 10% 20%,
+    rgba(162, 102, 246, 1) 0%,
+    rgba(203, 159, 249, 1) 90%
+  );
+  width: 2rem;
+  height: 2rem;
+  color: var(--color-board);
+  padding: 0.5rem 0.5rem 0.25rem 0.5rem;
+  margin-top: 1rem;
+  box-shadow: 0 7px 7px rgba(38, 50, 56, 0.19), 0 4px 2px rgba(38, 50, 56, 0.23);
+  border-radius: 1rem;
 }
 
 .Snake {
@@ -213,7 +227,6 @@
 
   .AlertCard {
     width: 60vw;
-    height: 50%;
   }
 }
 

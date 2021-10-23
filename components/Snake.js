@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import * as MdIcons from 'react-icons/io'
 import * as AiIcons from 'react-icons/ai'
 import * as ThemeIcons from 'react-icons/md'
+import * as SiIcons from 'react-icons/si'
 
 export default function Snake() {
     //get the initial theme(or preferred) from body
@@ -186,6 +187,11 @@ export default function Snake() {
                             setTimeTo(4)}, 3000)}}>
                         {timeTo == 4 ? 'Try again!' : timeTo == 3 ? 'ready?' : timeTo == 2 ? 'set!' : 'snake!'}
                     </button>
+                    <a href=''>
+                        <div className={styles.TwitterIcon}>
+                            <SiIcons.SiTwitter />
+                        </div>
+                    </a>
                 </div>
             </div>
             <div className={styles.Snake}>
