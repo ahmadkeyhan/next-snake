@@ -22,12 +22,14 @@ export default function Footer() {
             animate='animate'
             className={styles.DevDiv}>
             <p className={styles.DevP}>
-                Made with <SiIcons.SiJavascript className={styles.DevIcon} /> & lots of tea by <Link href='https://keyhansa.ir' passHref><span className={styles.DevLink}>keyhansa</span></Link>
+                Made with <SiIcons.SiJavascript className={styles.DevIcon} /> & lots of tea by <Link href='https://keyhansa.ir' passHref><a target="_blank"><span className={styles.DevLink}>keyhansa</span></a></Link>
             </p>
             <Link href='https://github.com/ahmadkeyhan/next-snake' passHref>
-                <div className={styles.GitDiv}>
-                    <SiIcons.SiGithub className={styles.GitIcon}/>
-                </div>
+                <a target="_blank">
+                    <div className={styles.GitDiv}>
+                        <SiIcons.SiGithub className={styles.GitIcon}/>
+                    </div>
+                </a>
             </Link>
         </motion.div>
     )
