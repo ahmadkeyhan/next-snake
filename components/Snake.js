@@ -206,64 +206,66 @@ export default function Snake() {
                             onClick={() => setActiveTheme('light')} />
                     </motion.div>
                 </div>
-                <canvas 
-                    ref={canvasRef}
-                    width={canvasWidth+4}
-                    height={canvasHeight+4}
-                    className={styles.Board} />
-                <div className={styles.Card}>
-                    <div className={styles.Scores}>
-                        <h3 className={styles.Score}>
-                            <AiIcons.AiFillStar /> Score: {score}
-                        </h3>
-                        <h3 className={styles.Score}>
-                            <AiIcons.AiFillTrophy /> High: {highScore}
-                        </h3>
-                    </div>
-                    {firstTry ?
-                        <button 
-                            onClick={() => {
-                                countDown()
-                                setTimeout(() => {
-                                    setFirstTry(false)
-                                    setDead(false)
-                                    setTimeTo(4)
-                                    }, 3000)}}
-                            className={styles.FirstTryButton}>    
-                            {timeTo == 4 ? 'start' : timeTo == 3 ? 'ready?' : timeTo == 2 ? 'set!' : 'snake!'}
-                        </button> :
-                        <div className={styles.Control}>
-                            <div>
-                                <MdIcons.IoMdArrowDropupCircle className={styles.Button}
-                                    onClick={() => {
-                                    if (direction.y == 0) {
-                                        setDirection({x: 0, y: -1})
-                                    }
-                                    }} />
-                            </div>
-                            <div>
-                                <MdIcons.IoMdArrowDropleftCircle className={styles.Button}
-                                    onClick={() => {
-                                    if (direction.x == 0) {
-                                        setDirection({x: -1, y: 0})
-                                    }
-                                    }} />
-                                <MdIcons.IoMdArrowDroprightCircle className={styles.Button}
-                                    onClick={() => {
-                                    if (direction.x == 0) {
-                                        setDirection({x: 1, y: 0})
-                                    }
-                                    }} />
-                            </div>
-                            <div>
-                                <MdIcons.IoMdArrowDropdownCircle className={styles.Button}
+                <div className={styles.Console}>
+                    <canvas 
+                        ref={canvasRef}
+                        width={canvasWidth+4}
+                        height={canvasHeight+4}
+                        className={styles.Board} />
+                    <div className={styles.Card}>
+                        <div className={styles.Scores}>
+                            <h3 className={styles.Score}>
+                                <AiIcons.AiFillStar /> Score: {score}
+                            </h3>
+                            <h3 className={styles.Score}>
+                                <AiIcons.AiFillTrophy /> High: {highScore}
+                            </h3>
+                        </div>
+                        {firstTry ?
+                            <button 
+                                onClick={() => {
+                                    countDown()
+                                    setTimeout(() => {
+                                        setFirstTry(false)
+                                        setDead(false)
+                                        setTimeTo(4)
+                                        }, 3000)}}
+                                className={styles.FirstTryButton}>    
+                                {timeTo == 4 ? 'start' : timeTo == 3 ? 'ready?' : timeTo == 2 ? 'set!' : 'snake!'}
+                            </button> :
+                            <div className={styles.Control}>
+                                <div>
+                                    <MdIcons.IoMdArrowDropupCircle className={styles.Button}
                                         onClick={() => {
                                         if (direction.y == 0) {
-                                            setDirection({x: 0, y: 1})
+                                            setDirection({x: 0, y: -1})
                                         }
                                         }} />
-                            </div>
-                        </div> }                            
+                                </div>
+                                <div>
+                                    <MdIcons.IoMdArrowDropleftCircle className={styles.Button}
+                                        onClick={() => {
+                                        if (direction.x == 0) {
+                                            setDirection({x: -1, y: 0})
+                                        }
+                                        }} />
+                                    <MdIcons.IoMdArrowDroprightCircle className={styles.Button}
+                                        onClick={() => {
+                                        if (direction.x == 0) {
+                                            setDirection({x: 1, y: 0})
+                                        }
+                                        }} />
+                                </div>
+                                <div>
+                                    <MdIcons.IoMdArrowDropdownCircle className={styles.Button}
+                                            onClick={() => {
+                                            if (direction.y == 0) {
+                                                setDirection({x: 0, y: 1})
+                                            }
+                                            }} />
+                                </div>
+                            </div> }                            
+                    </div>
                 </div>
             </div>
         </div> 
